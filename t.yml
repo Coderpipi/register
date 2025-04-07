@@ -1,0 +1,18 @@
+name: s-register
+url: http://192.168.31.98:8080/
+protocol: http
+ports:
+  name: http
+  port: 8080
+healthcheck:
+  method: GET
+  path: /ping
+  port: 8080
+  interval: 3s
+  timeout: 3s
+  status: 200
+routes:
+  name: r-register
+  rule: PathPrefix(`/hello`)
+  entry-points:
+    - http
