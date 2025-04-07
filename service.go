@@ -23,6 +23,6 @@ type (
 		Rule        string   `mapstructure:"rule"`
 		EntryPoints []string `mapstructure:"entry-points"`
 		Priority    int64    `mapstructure:"priority"`
-		Middleware  []string `mapstructure:"middleware"`
+		Middlewares []string `mapstructure:"middlewares"`
 	}
 )

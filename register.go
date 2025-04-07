@@ -102,7 +102,7 @@ func (e *EtcdRegister) loadKV(s *Service) (map[string]string, error) {
 		res[fmt.Sprintf(routerPrefixFmt+"service", s.Protocol, r.Name)] = s.Name
 		// traefik/http/routers/<router_name>/priority
 		res[fmt.Sprintf(routerPrefixFmt+"priority", s.Protocol, r.Name)] = cast.ToString(r.Priority)
-		for i, mw := range r.Middleware {
+		for i, mw := range r.Middlewares {
 			// traefik/http/routers/<router_name>/middlewares
 			res[fmt.Sprintf(routerPrefixFmt+"middlewares/%d", s.Protocol, r.Name, i)] = mw
 		}

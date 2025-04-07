@@ -14,7 +14,7 @@ healthcheck:
 routes:
   name: r-register
   rule: PathPrefix(`/hello`)
-  middleware:
+  middlewares:
     - share-powerbank-stripprefixregex@docker
   entry-points:
     - http
